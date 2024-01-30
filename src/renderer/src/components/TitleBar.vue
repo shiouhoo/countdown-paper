@@ -6,6 +6,25 @@
                 :src="icon"
                 alt=""
             >
+            <div class="flex ml-1rem gap-0.5rem no-drag">
+                <el-menu
+                    class="el-menu-demo"
+                    mode="horizontal"
+                    :ellipsis="false"
+                >
+                    <el-sub-menu index="2">
+                        <template #title>
+                            <span class="text-[#918b8b] leading-100% text-0.88rem cursor-pointer">编辑</span>
+                        </template>
+                        <el-menu-item
+                            @click="settingVisible = true"
+                        >
+                            设置
+                        </el-menu-item>
+                    </el-sub-menu>
+                </el-menu>
+                <SettingDialog v-model="settingVisible" />
+            </div>
         </div>
         <!-- 右侧三个操作图标 -->
         <div className="no-drag action">
@@ -73,6 +92,8 @@ const closeWinow = () =>{
     window.electron.ipcRenderer.invoke('window-close', props.type);
 };
 
+const settingVisible = ref(false);
+
 </script>
 <style lang='less' scoped>
 .title-bar{
@@ -84,7 +105,7 @@ const closeWinow = () =>{
     justify-content: space-between;
     padding-left: 10px;
     width: 100vw;
-    height: 30px;
+    height: 36px;
     background-color: rgb(42,42,42);
     -webkit-app-region: drag;
     .icon-name{
@@ -117,5 +138,16 @@ const closeWinow = () =>{
             height: 16px;
         }
     }
+}
+:deep(.el-menu--horizontal.el-menu){
+    height: 1.5rem;
+    border-bottom: 0;
+}
+:deep(.el-sub-menu__title){
+    padding: 0 !important;
+    border-bottom: 0 !important;
+}
+:deep(.el-sub-menu__icon-arrow){
+    display: none;
 }
 </style>
