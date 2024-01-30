@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: hh
+appId: com.countdownPaper.app
+productName: countdownPaper
 directories:
   buildResources: build
 files:
@@ -12,12 +12,12 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: hh
-nsis:
-  artifactName: ${name}-${version}-setup.${ext}
-  shortcutName: ${productName}
-  uninstallDisplayName: ${productName}
-  createDesktopShortcut: always
+  executableName: countdownPaper
+# nsis:
+#   artifactName: ${name}-${version}-setup.${ext}
+#   shortcutName: ${productName}
+#   uninstallDisplayName: ${productName}
+#   createDesktopShortcut: always
 mac:
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:

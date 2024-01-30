@@ -32,6 +32,11 @@ function quitLook() {
 
 const isMaxWindow = ref(false);
 onMounted(() => {
+    // 读取数据
+    window.electron.ipcRenderer.invoke('loaddata-setting').then((res)=>{
+        settingStore.endTime = res.endTime;
+        settingStore.showFullScreenTip = res.showFullScreenTip;
+    });
     window.electron.ipcRenderer.invoke('window-listen', 'main');
     // 监听窗口最大化事件
     window.electron.ipcRenderer.on('window-change', (_, isMaximized: boolean) => {
@@ -49,7 +54,7 @@ onMounted(() => {
 });
 
 // 计算倒计时
-let endtime = '2024-2-9 00:00:00';
+let endtime = '';
 const duration = ref<{
     days: number;
     hours: number;
@@ -63,7 +68,7 @@ const duration = ref<{
 });
 let timer: NodeJS.Timeout;
 watch(()=>settingStore.endTime, ()=>{
-    endtime = settingStore.endTime || '2024-2-9 00:00:00';
+    endtime = settingStore.endTime;
     timer && clearInterval(timer);
     timer = setInterval(() => {
         const now = new Date().getTime();

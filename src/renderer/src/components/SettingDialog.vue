@@ -30,6 +30,13 @@ import { useSettingStore } from '@renderer/store/setting';
 const settingStore = useSettingStore();
 const show = defineModel<boolean>();
 
+watch([()=>settingStore.showFullScreenTip, ()=> settingStore.endTime], ()=>{
+    window.electron.ipcRenderer.invoke('savedata-setting', {
+        showFullScreenTip: settingStore.showFullScreenTip,
+        endTime: settingStore.endTime
+    });
+});
+
 </script>
 <style lang='scss' scoped>
 
