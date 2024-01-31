@@ -10,7 +10,7 @@ if(!gotTheLock) {
 }else{
     app.whenReady().then(() => {
     // Set app user model id for windows
-        electronApp.setAppUserModelId('com.electron');
+        electronApp.setAppUserModelId('com.countdownPaper');
 
         app.on('browser-window-created', (_, window) => {
             optimizer.watchWindowShortcuts(window);

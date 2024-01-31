@@ -3,7 +3,7 @@
         <div class="absolute left-5rem top-50% -translate-y-50% text-#fff text-8rem write-vertical-left -tracking-3rem whitespace-nowrap font-[HongLeiXingShuJianTi]">
             放假倒计时
         </div>
-        <div class="absolute right-2rem top-50% -translate-y-50% text-#fff text-8rem write-vertical-right -tracking-3rem font-[HongLeiXingShuJianTi]">
+        <div class="absolute right-0rem top-50% -translate-y-50% text-#fff text-8rem write-vertical-right -tracking-3rem font-[HongLeiXingShuJianTi]">
             <div
                 v-show="duration.days > 0 || duration.hours > 0"
                 class="whitespace-nowrap flex"

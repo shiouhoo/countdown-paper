@@ -94,11 +94,11 @@ watch(()=>settingStore.endTime, ()=>{
 <template>
     <div
         class="main h-100%"
-        :style="{paddingTop: isMaxWindow ?0:'36px',backgroundImage: isMaxWindow ?`url(${active?.pic})` : ''}"
+        :style="{paddingTop: isMaxWindow ? 0:'36px',backgroundImage: isMaxWindow ?`url(${active?.pic})` : ''}"
         @dblclick="quitLook"
     >
         <TitleBar v-show="!isMaxWindow" />
-        <div class="flex h-100%">
+        <div class="flex h-100% overflow-hidden">
             <div v-if="!isMaxWindow" class="flex flex-1 justify-between ellipsis-2">
                 <div
                     v-for="(item,index) in waperList"
