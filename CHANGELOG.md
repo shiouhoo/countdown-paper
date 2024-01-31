@@ -1,3 +1,10 @@
+## [1.0.0-beta.2](https://github.com/shiouhoo/countdown-paper/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-01-31)
+
+
+### 🎫 Chores | 其他更新
+
+* 修改release配置 ([4270e4e](https://github.com/shiouhoo/countdown-paper/commit/4270e4eb69c9fa794d3c308d45d8e7e4f8c12599))
+
 ## 1.0.0-beta.1 (2024-01-31)
 
 

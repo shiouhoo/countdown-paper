@@ -1,6 +1,6 @@
 {
   "name": "countdown-paper",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "An Electron application with Vue and TypeScript",
   "main": "./out/main/index.js",
   "author": "shiouhoo",
